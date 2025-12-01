@@ -1,0 +1,120 @@
+:root {
+    /* Primary */
+    --blue600: hsl(185, 75%, 39%);
+    --navy950: hsl(229, 23%, 23%);
+    --gray500: hsl(227, 10%, 46%);
+
+    /* Neutral */
+    --gray100: hsl(225, 10%, 92%);
+
+    --white: hsl(0, 0%, 100%);
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: grid;
+    place-items: center;
+    height: 100vh;
+    background-color: var(--blue600);
+    font-family: "Kumbh Sans", sans-serif;
+
+    & > .bg {
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: -1;
+
+        & > .top {
+            position: absolute;
+            width: 1500px;
+            top: -1000px;
+            left: -900px;
+        }
+
+        & > .bottom {
+            position: absolute;
+            width: 1500px;
+            bottom: -1200px;
+            right: -600px;
+        }
+    }
+}
+
+main {
+    width: 400px;
+    border-radius: 15px;
+    background-color: var(--white);
+    margin: 50px 0;
+
+    & > .profile {
+        height: 150px;
+        background-image: url("images/bg-pattern-card.svg");
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        border-radius: 15px 15px 0 0;
+        position: relative;
+
+        & > img {
+            width: 100px;
+            border: 5px solid var(--white);
+            border-radius: 100%;
+            position: absolute;
+            bottom: -50px;
+            left: 38.88%;
+        }
+    }
+
+    & > .info {
+        margin-top: 80px;
+        text-align: center;
+        & .g {
+            color: var(--gray100);
+        }
+
+        & > h1 {
+            margin-bottom: 10px;
+            & > span {
+                font-weight: 400;
+            }
+        }
+
+        & > .stat {
+            display: flex;
+            justify-content: space-around;
+            margin: 40px 0;
+            padding-top: 30px;
+            border-top: 1px solid var(--gray100);
+
+            & p {
+                letter-spacing: 2px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 750px) {
+    body > .bg {
+        & > .top {
+            top: -1200px;
+            left: -800px;
+        }
+
+        & > .bottom {
+            bottom: -1100px;
+            right: -950px;
+        }
+    }
+}
+
+@media screen and (max-width: 440px) {
+    main {
+        width: 90.90%;
+    }
+}
